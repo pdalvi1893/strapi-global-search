@@ -1,4 +1,4 @@
-# Strapi plugin content-export-import
+# Strapi plugin global search
 
 ![](https://github.com/lazurey/strapi-plugin-content-export-import/workflows/Run-Tests/badge.svg)
 
