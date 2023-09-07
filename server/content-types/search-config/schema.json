@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "search_configs",
+  "info": {
+    "singularName": "search-config",
+    "pluralName": "search-configs",
+    "displayName": "Search Config"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
