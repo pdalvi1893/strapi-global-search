@@ -26,6 +26,15 @@ module.exports = {
       },
     },
     {
+      method: "GET",
+      path: "/sync-data",
+      handler: "search-config.syncData",
+      config: {
+        policies: [],
+        auth: false,
+      },
+    },
+    {
       method: "POST",
       path: "/settings",
       handler: "search-config.setSettings",

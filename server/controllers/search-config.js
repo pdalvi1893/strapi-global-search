@@ -26,4 +26,11 @@ module.exports = createCoreController('plugin::simple-global-search.search-confi
       ctx.throw(500, err);
     }
   },
+  async syncData(ctx) {
+    try {
+      ctx.body = await strapi.plugin('simple-global-search').service('search-config').syncEntities();
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
 });

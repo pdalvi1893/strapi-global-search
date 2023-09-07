@@ -46,7 +46,10 @@ module.exports = createCoreService('plugin::simple-global-search.search-config',
   },
 
   async syncEntities() {
-    const searchApis = strapi.config.get('search');
+    const searchApis = await strapi
+      .plugin('simple-global-search')
+      .service('search-config')
+      .getSettings(); //strapi.config.get('search');
     const cultures = await strapi.plugins.i18n.services.locales.find();
 
     for (let key in searchApis) {

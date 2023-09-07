@@ -15,5 +15,8 @@ const taskRequests = {
       data: data,
     });
   },
+  syncData: async data => {
+    return await axiosInstance.get(`/simple-global-search/sync-data`);
+  },
 };
 export default taskRequests;

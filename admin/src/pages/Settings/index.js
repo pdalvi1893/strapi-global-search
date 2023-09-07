@@ -59,6 +59,16 @@ const Settings = () => {
     });
   };
 
+  const syncData = async () => {
+    setIsSaving(true);
+    const res = await taskRequests.syncData();
+    setIsSaving(false);
+    toggleNotification({
+      type: 'success',
+      message: 'Settings successfully updated',
+    });
+  };
+
   return (
     <>
       <HeaderLayout
@@ -69,15 +79,24 @@ const Settings = () => {
           isLoading ? (
             <></>
           ) : (
-            <Button
+            <><Button
               onClick={handleSubmit}
               startIcon={<Check />}
               size="L"
               disabled={isSaving}
               loading={isSaving}
             >
-              Save
+              Save Configuration
             </Button>
+              <Button
+                onClick={syncData}
+                startIcon={<Check />}
+                size="L"
+                disabled={isSaving}
+                loading={isSaving}
+              >
+                Sync Data
+              </Button></>
           )
         }
       ></HeaderLayout>
